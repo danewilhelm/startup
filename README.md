@@ -17,6 +17,9 @@ As you submit atomic habits, it will save your atomic habits so you can "make it
 ### Atomic Counter
 This global counter shows how many atomic habits all users have collectively created! The power of small and simple things, eh?
 
+## Application Sketch
+![Sketch of my application. Top note is homepage. Bottom page is default page after login. Can navigate to left and right pages.]
+
 ## Technologies
 ### HTML
 I will use HTML to add structure to my startup as the framework for the visual and interactive components of the pages.
