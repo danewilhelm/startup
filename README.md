@@ -1,4 +1,4 @@
-# My startup
+# My Startup: Atomic Habit Maker
 Ever wanted to become something more, to be someone better? To start now, just create atomic habits! That's where my startup comes in. It helps aces and amateurs create these small and simple habits in the snap of a finger.
 
 ## Key Features
