@@ -1,12 +1,54 @@
-# My Startup: Atomic Habit Maker
+# HTML Deliverable
+
+
+## Properly structured HTML
+
+### HTML pages for each component of your application
+There are 4 pages: The home page, the habit maker page, the library page, and the about page. (INCOMPLETE)
+
+### Proper use of HTML tags including BODY, NAV, MAIN, HEADER, FOOTER
+I included them on every page, just look for them. (INCOMPLETE)
+
+### Links between pages as necessary
+At the top of every page there is a navigation area. Click the buttons to navigate between pages. (INCOMPLETE)
+
+### Application textual content
+Each page has text that explains what to do. (INCOMPLETE)
+
+
+
+
+### Placeholder for 3rd party service calls
+(INCOMPLETE)
+
+### Application images
+(INCOMPLETE)
+
+### Login placeholder, including user name display
+Users will log in through the homepage. 
+The user's name is displayed on every page (INCOMPLETE)
+
+
+### Database data placeholder showing content stored in the database
+On the libary page, it will show the data from the database of all the habits that user created. (INCOMPLETE)
+
+
+### WebSocket data placeholder showing where realtime communication will go
+The atomic habit tracker is found on the home page. Search for "websocket" as a class ID to find it. The count placeholder says 420 hehe
+
+## Misc. Prerequisites
+At least 10 git commits are spread consistently throughout February 5th. In the future, I will spread these commits over several days.
+I have included the github link on my startup's homepage, and obviously I've updated the README.md file.
+
+# Startup Description: Atomic Habit Maker
 Ever wanted to become something more, to be someone better? To start now, just create atomic habits! That's where my startup comes in. It helps aces and amateurs create these small and simple habits in the snap of a finger.
 
 ## Key Features
 ### Personal Data
-Your privacy matters, so your atomic habits are just for you (but sharing them with your friends wouldn't hurt :D)
+Your privacy matters, so your atomic habits are just for you (but it wouldn't hurt if you share them with your friends :D)
 
 ### Atomic Habit Maker
-This is the main feature of the startup. It gives the user an easy format to create atomic habits
+This is the main feature of the startup. It gives the user an easy format to create atomic habits.
 
 ### Beginner's Guide
 Confused on what atomic habits are? Can't think of any ideas? Don't sweat it, because it will include a simple guide to get you started.
@@ -35,6 +77,5 @@ I will have users log in with appropriate login info so that they can privately 
 I will store the atomic habits that users submit into a database so to protect this data from being lost on the client's browser or the server.
 ### WebSocket
 Whenever someone submits a new atomic habit, I will update the global counter for the total amount of atomic habits created. Then I will live-sync this with any open instances of the website.
-
 
 
