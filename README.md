@@ -13,13 +13,13 @@ I included them on every page, just look for them.
 At the top of every page there is a navigation area. Click the buttons to navigate between pages.
 
 ### Application textual content
-Each page has text that explains what to do. (INCOMPLETE)
+Each page has text that explains what to do.
 
 ### Placeholder for 3rd party service calls
 In make.html and library.html, search for class="webservice". One page will grab a random inspirational or motivational quote, and the other will display a motivational image.
 
 ### Application images
-In index.html and about.html, there are static images referring to the book, Atomic Habits. (INCOMPLETE)
+In index.html and about.html, there are static images referring to the book, Atomic Habits.
 
 ### Login placeholder, including user name display
 In index.html, make.html, and library.html, search for class="user_name". Users will log in through the homepage. The user's name is displayed when viewing the habit maker page and the habit library page.
