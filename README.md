@@ -16,22 +16,22 @@ At the top of every page there is a navigation area. Click the buttons to naviga
 Each page has text that explains what to do. (INCOMPLETE)
 
 ### Placeholder for 3rd party service calls
-In make.html, search for class="webservice". The 3rd party web service will generate a random inspirational or motivational quote, and I will display it there.
+In make.html and library.html, search for class="webservice". One page will grab a random inspirational or motivational quote, and the other will display a motivational image.
 
 ### Application images
 In index.html and about.html, there are static images referring to the book, Atomic Habits. (INCOMPLETE)
 
 ### Login placeholder, including user name display
-In index.html, make.html, and library.html, search for class="user_name". Users will log in through the homepage. The user's name is displayed when viewing the habit maker page and the habit library page. (INCOMPLETE)
+In index.html, make.html, and library.html, search for class="user_name". Users will log in through the homepage. The user's name is displayed when viewing the habit maker page and the habit library page.
 
 ### Database data placeholder showing content stored in the database
-In library.html search for class="database". The libary will show the data from the database of all the habits that user created. (INCOMPLETE)
+In library.html search for class="database". The libary will show the data from the database of all the habits that user created.
 
 ### WebSocket data placeholder showing where realtime communication will go
 In index.html search for class="websocket". The placeholder for the atomic habit tracker currently counts 420 hehe
 
 ## Misc. Prerequisites
-At least 10 git commits are spread consistently throughout February 5th. In the future, I will spread these commits over several days.
+At least 10 git commits are spread consistently throughout February 5th. For future deliverables, I will spread these commits over several days.
 I have included the github link on my startup's homepage, and obviously I've updated the README.md file.
 
 
