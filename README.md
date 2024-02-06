@@ -31,7 +31,7 @@ In library.html search for class="database". The libary will show the data from 
 In index.html search for class="websocket". The placeholder for the atomic habit tracker currently counts 420 hehe
 
 ## Misc. Prerequisites
-At least 10 git commits are spread consistently throughout February 5th. In the future, I will spread these commits over several days.
+At least 10 git commits are spread consistently throughout February 5th. For future deliverables, I will spread these commits over several days.
 I have included the github link on my startup's homepage, and obviously I've updated the README.md file.
 
 
