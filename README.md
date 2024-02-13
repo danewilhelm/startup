@@ -1,5 +1,46 @@
-# HTML Deliverable
 
+
+
+# CSS Deliverable
+
+## Prerequisite: Simon CSS deployed to your production environment
+(INCOMPLETE)
+
+## Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
+(INCOMPLETE)
+
+## Prerequisite: Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the voter app as an example.
+(INCOMPLETE)
+
+## Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
+(INCOMPLETE)
+
+## Properly styled CSS
+(INCOMPLETE)
+
+### 30% Header, footer, and main content body
+(INCOMPLETE)
+
+### 20% Navigation elements
+(INCOMPLETE)
+
+### 10% Responsive to window resizing
+(INCOMPLETE)
+
+### 20% Application elements
+(INCOMPLETE)
+
+### 10% Application text content
+(INCOMPLETE)
+
+### 10% Application images
+(INCOMPLETE)
+
+#
+# Past Deliverables
+#
+
+# HTML Deliverable
 
 ## Properly structured HTML
 
