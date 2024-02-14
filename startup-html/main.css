@@ -1,21 +1,27 @@
+@font-face {
+  font-family: '"Rethink_Sans"';
+  src: url('https://cs260.click/fonts/quicksand.ttf');
+}
+
 body {
     background-color:blanchedalmond;
     display: flex;
     flex-direction: column;
+    min-width: 375px;
 }
 
 header {
     flex: 0 80px;
-  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+}
   
-  main {
-    flex: 1 calc(100vh - 110px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-  }
-  
-  footer {
-    flex: 0 30px;
-  }
+footer {
+  flex: 0 30px;
+}
