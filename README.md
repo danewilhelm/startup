@@ -5,35 +5,35 @@
 ## Properly styled CSS
 
 ### 30% Header, footer, and main content body
-(INCOMPLETE)
+See main.css, there is styling for the header, footer, and main that applies to all pages. The header and footer are colored with a light turquoise, while main has a light brown. The footer is intentionally anchored to the bottom for consistency.
 
 ### 20% Navigation elements
-(INCOMPLETE)
+The navigation Elements have been styled with grey buttons with bold font. They change a slightly darker color when hovered over. Also the links at the bottom are styled differently because they go to different websites. The login button is similarly styled to the header navigation buttons because it also navigates the website.
 
 ### 10% Responsive to window resizing
-(INCOMPLETE)
+See main.css, the responsive window resizing applies to all pages. The header and footer remain stable, while the main element changes dynamically. Specifically, the navigation buttons are organized vertically when the width is too small. Also, the footer disappears when the height is too small. Also, any change in screen size will change the image sizes.
 
 ### 20% Application elements
-(INCOMPLETE)
+I styled the counter on the home page to better present and bring focus to it. I also rounded the images to bring a softer feel to the pages. I also set up custom button and input styling to fit the feel of my website.
 
 ### 10% Application text content
-(INCOMPLETE)
+The font family for all text content has been changed to a modern and appealing font, and increased to a slightly larger size for easier readability. The text is organized in easy-to-read blocks that are centered horizontally on the page.
 
 ### 10% Application images
-(INCOMPLETE)
+All images are set to 50% width and height of the parent element. Since the parent size dynamically changes, so do the images. As noted earlier, the image corners are rounded for a softer feel.
 
 ## Misc. Prerequisites
 ### Prerequisite: Simon CSS deployed to your production environment
-(INCOMPLETE)
+simon.habitmaker.click
 
 ### Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
-(INCOMPLETE)
+See bottom of every page.
 
-### Prerequisite: Notes in your startup Git repository README.md file documenting what you modified and added with this deliverable. The TAs will only grade things that have been clearly described as being completed. Review the voter app as an example.
-(INCOMPLETE)
+### Prerequisite:Git repository README.md file
+You're lookin at it.
 
 ### Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
-(INCOMPLETE)
+Check.
 
 #
 # ---------------------Past Deliverables--------------------
