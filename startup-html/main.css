@@ -31,8 +31,11 @@ menu {
 
 }
 
+
 menu li {
   list-style: none;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 menu li a {
@@ -84,13 +87,18 @@ img {
 
 /* ------------main styling------------- */
 main {
-  padding-bottom: 2.5rem;
+  padding-bottom: 3rem;
+  border-bottom: 20px;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   /* height: 100vh; */
+}
+
+img {
+  border-radius: 8px;
 }
   
 
@@ -124,13 +132,19 @@ footer {
 }
 
 @media (max-height: 600px) {
-  header {
+  /* header {
     display: none;
-  }
+  } */
   footer {
     display: none;
   }
   main {
     flex: 1 100vh;
+  }
+}
+
+@media (max-width: 750px) {
+  menu {
+    flex-direction: column;
   }
 }
