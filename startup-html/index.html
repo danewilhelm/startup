@@ -8,6 +8,10 @@
     <title>startup HTML</title>
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="index.css" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 
     <!-- Include bootstrap CSS framework -->
     <!-- <link
@@ -22,7 +26,6 @@
     <!-- Use header, main, and footer elements to give semantic structure -->
     <header>
         <h1>Atomic Habit Maker</h1>
-        <img src="assets/images/atomic_habit_logo.jpg" alt="Atomic Habits" width=600px>
 
       <!-- Navigation elements -->
       <nav>
@@ -35,13 +38,14 @@
         </menu>
       </nav>
 
-      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
-      <hr />
+      
     </header>
 
     <main>
-      <h1 class="websocket">Global Habits Made: 420</h1>
-      <p>Login to start making habits</p>
+      <img src="assets/images/atomic_habit_logo.jpg" alt="Atomic Habits" width=600px>
+      <h2>Global Habits Made</h2>
+      <h2 class="websocket" id="global_habit_counter">420</h2>
+      <p>Now it's time to make yours</p>
       <form class="user_name", method="get" action="make.html">
         <input type="text" id="name" placeholder="Your name here" />
         <br />
@@ -52,7 +56,6 @@
     </main>
 
     <footer>
-      <hr />
       <span class="text-reset">Learn more about Atomic Habits from the author </span>
       <br />
       <a href="https://jamesclear.com/">jamesclear.com</a>
