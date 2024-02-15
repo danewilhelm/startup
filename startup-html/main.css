@@ -8,8 +8,6 @@ body {
   margin: 0px;
   width: 100%;
   height: 100%;
-
-
   display: flex;
   flex-direction: column;
   min-width: 375px;
@@ -18,7 +16,7 @@ body {
 /* -------------header styling----------- */
 header {
   background-color: rgb(172, 255, 247);
-
+  border-bottom: black solid;
   /* flex value for the body's flexbox */
   flex: 0 80px;
 }
@@ -34,11 +32,8 @@ menu li {
   list-style: none;
 }
 
-a {
+menu li a {
   text-decoration: none;
-  color: black;
-  font-weight: bold;
-  padding: 10px;
 }
 
 /* ------------main styling---------- */
@@ -47,6 +42,41 @@ img {
   max-height: 50%;
   padding: 5px;
 }
+
+/* <!-- HTML !-->
+<button class="button-1" role="button">Button 1</button> */
+
+/* CSS */
+
+.button-my1 {
+  font-family: "Rethink Sans";
+  color: black;
+  font-weight: bold;
+  background-color: darkgray;
+  border-style: none;
+  height: 40px;
+  margin: 4px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button-my1:hover {
+  background-color: rgb(151, 151, 151);
+}
+
+.input_login {
+  font-family: "Rethink Sans";
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  padding: 1em;
+  margin: 2px;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  transition: 300ms ease-in-out;
+}
+
 
 main {
   flex: 1;
@@ -57,10 +87,23 @@ main {
 
 }
   
+
+
+/* ---------footer styling------------ */
 footer {
   flex: 0 30px;
   background-color: rgb(172, 255, 247);
+  border-top: black solid;
+}
 
+.footer_link {
+  color: black;
+  font-weight: bold;
+  padding: 3px;
+}
+
+#github {
+  float: right;
 }
 
 @media (orientation: portrait) {

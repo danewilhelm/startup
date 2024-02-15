@@ -25,16 +25,15 @@
   <body>
     <!-- Use header, main, and footer elements to give semantic structure -->
     <header>
-        <h1>Atomic Habit Maker</h1>
-
+      <h1>Atomic Habit Maker</h1>
       <!-- Navigation elements -->
       <nav>
         <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
         <menu>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="make.html">Make New Habits</a></li>
-          <li><a href="library.html">Your Habit Library</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a class="button-my1" href="index.html">Home</a></li>
+          <li><a class="button-my1" href="make.html">Make New Habits</a></li>
+          <li><a class="button-my1" href="library.html">Your Habit Library</a></li>
+          <li><a class="button-my1" href="about.html">About</a></li>
         </menu>
       </nav>
 
@@ -42,26 +41,22 @@
     </header>
 
     <main>
-      <img src="assets/images/atomic_habit_logo.jpg" alt="Atomic Habits" width=600px>
+      <img class="logo_image" src="assets/images/atomic_habit_logo.jpg" alt="Atomic Habits" width=600px>
       <h2>Global Habits Made</h2>
       <h2 class="websocket" id="global_habit_counter">420</h2>
       <p>Now it's time to make yours</p>
-      <form class="user_name", method="get" action="make.html">
-        <input type="text" id="name" placeholder="Your name here" />
+      <form class="login", method="get" action="make.html">
+        <input class="input_login" type="text" id="name" placeholder="Your name here" />
         <br />
-        <input type="text" id="password" placeholder="Your password here" />
+        <input class="input_login" type="text" id="password" placeholder="Your password here" />
         <br />
-        <button type="submit">Login</button>
+        <button class="button-my1" type="submit">Login</button>
       </form>
     </main>
 
     <footer>
-      <span class="text-reset">Learn more about Atomic Habits from the author </span>
-      <br />
-      <a href="https://jamesclear.com/">jamesclear.com</a>
-      <br />
-      <a href="https://github.com/danewilhelm/startup/edit/main/README.md"><b>GitHub</b></a>
-
+      <a class="footer_link" href="https://jamesclear.com/">jamesclear.com</a>
+      <a class="footer_link" id="github" href="https://github.com/danewilhelm/startup/edit/main/README.md"><b>GitHub</b></a>
     </footer>
   </body>
 </html>
