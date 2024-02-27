@@ -7,7 +7,6 @@
     <title>startup HTML</title>
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="index.css" />
-    <script src="make.js"></script>
 
     
     <!-- Include bootstrap CSS framework -->
@@ -40,23 +39,25 @@
     <main>
       <!-- Insert main HTML-->
       <div>
-        <p>Welcome <span class="user name">Mr. E</span>, it's time to make some habits!</p>
+        <p>Welcome <span class="profile_name">Mr. E</span>, it's time to make some habits!</p>
         <b class="webservice">"By small and simple things are great things brought to pass" - Alma, The Younger</b>
       </div>
-      <form method="get">
+      <div class="make_habit">
         <label for="cue">Cue:</label>
         <input class="input_nice" type="text" id="cue" placeholder="at 8am every morning..." />
         <p>I will... </p>
         <label for="response">Response:</label>
         <input class="input_nice" type="text" id="response" placeholder="put on my gym clothes" />
         <br />
-        <button class="button-my1" type="submit">Submit</button>
-      </form>
+        <button class="button-my1" type="submit" onclick="submit_habit()">Submit</button>
+      </div>
+      
     </main>
 
     <footer>
       <a class="footer_link" href="https://jamesclear.com/">jamesclear.com</a>
       <a class="footer_link" id="github" href="https://github.com/danewilhelm/startup/edit/main/README.md"><b>GitHub</b></a>
     </footer>
+    <script src="make.js"></script>
   </body>
 </html>
