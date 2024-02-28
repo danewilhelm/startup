@@ -1,6 +1,6 @@
 # Javascript Deliverable
 ## 20% JavaScript support for future login.
-(INCOMPLETE)
+See "index.js". The login function supports creating user profiles that can be reaccessed with the correct login info.
 
 ## 20% JavaScript support for future database data.
 (INCOMPLETE)
