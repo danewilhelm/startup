@@ -56,7 +56,7 @@ function update_name() {
     let current_profile = retrieve_current_profile();
 
     // set name element to current profile's name
-    name_el.textContent = current_profile.name ?? 'Mystery player';
+    name_el.textContent = current_profile.name ?? 'Mystery user';
 }
 
 // main
