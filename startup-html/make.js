@@ -21,6 +21,7 @@ class Habit {
         this.cue = cue;
         this.commitment = ", I will ";
         this.response = response;
+        this.whole_string = cue + this.commitment + response;
     }
 }
 

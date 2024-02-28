@@ -17,12 +17,7 @@ function retrieve_current_profile() {
 
 
 
-
-
-
-
-
-//-----------------profile name------------------
+//-----------------insert profile name------------------
 // called in main (after the page loads)
 function update_name() {
     // get name element and current profile
@@ -33,5 +28,22 @@ function update_name() {
     name_el.textContent = current_profile.name ?? 'Mystery user';
 }
 
-// main
+// -----------------Generate list of habits--------------
+function display_habit_library() {
+    // retrieve habit_list
+    let current_profile = retrieve_current_profile();
+    let habit_list = current_profile.habit_list;
+
+    // retrieve HTML list element
+    let list_el = document.querySelector('#habit_database');
+
+    
+
+    for (cur_habit of habit_list) {
+        console.log(cur_habit.whole_string);
+    }
+}
+
+// ---------------main--------------
 update_name();
+display_habit_library();
