@@ -20,6 +20,7 @@ function login() {
     }
     // The user successfully logged in
     update_current_profile_name(attempted_profile.name);
+    console.log("User successfully logged in");
     window.location.href = 'make.html';
 }
 
@@ -54,9 +55,5 @@ function retrieve_object_from_local_storage(storage_name) {
 }
 
 function update_current_profile_name(profile_name) {
-    return send_object_to_local_storage("current_profile_name", profile_name);
-}
-
-function retrieve_current_profile() {
-    return JSON.parse(localStorage.getItem("current_profile_name"));
+    return localStorage.setItem("current_profile_name", profile_name);
 }
