@@ -57,3 +57,4 @@ function retrieve_object_from_local_storage(storage_name) {
 function update_current_profile_name(profile_name) {
     return localStorage.setItem("current_profile_name", profile_name);
 }
+

@@ -15,6 +15,11 @@ function retrieve_current_profile() {
     return retrieve_object_from_local_storage(current_profile_name);
 }
 
+function update_current_profile(updated_profile) {
+    // send the current profile to local storage
+    send_object_to_local_storage(updated_profile.name, updated_profile);
+}
+
 //------------Habits------------
 class Habit {
     constructor(cue, response) {
@@ -45,7 +50,7 @@ function submit_habit() {
     response_el.value = '';
 
     // send new data to local storage
-    send_object_to_local_storage("current_profile", current_profile);
+    update_current_profile(current_profile);
     console.log("habit successfully submitted");
 }
 

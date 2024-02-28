@@ -8,10 +8,9 @@ function retrieve_object_from_local_storage(storage_name) {
 }
 
 function retrieve_current_profile() {
-    // grabs the string name of the current profile
+    // grab the string name of the current profile
     let current_profile_name = localStorage.getItem("current_profile_name")
-
-    // then returns the profile object associated with that string name
+    // then return the profile object associated with that string name
     return retrieve_object_from_local_storage(current_profile_name);
 }
 
@@ -34,11 +33,10 @@ function display_habit_library() {
     let current_profile = retrieve_current_profile();
     let habit_list = current_profile.habit_list;
 
+
     // retrieve HTML list element
     let list_el = document.querySelector('#habit_database');
-
     
-
     for (cur_habit of habit_list) {
         console.log(cur_habit.whole_string);
     }
