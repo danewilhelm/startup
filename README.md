@@ -1,5 +1,32 @@
+# Javascript Deliverable
+## 20% JavaScript support for future login.
+See "index.js". The login function supports creating user profiles that can be reaccessed with the correct login info.
+
+## 20% JavaScript support for future database data.
+(INCOMPLETE)
+
+## 20% JavaScript support for future WebSocket.
+(INCOMPLETE)
+
+## 40% JavaScript support for your application's interaction logic.
+(INCOMPLETE)
+
+## Misc. Prerequisites
+### Prerequisite: Simon JavaScript deployed to your production environment
+See simon.habitmaker.click
+
+### Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
+See bottom of every page.
+
+### Prerequisite:Git repository README.md file
+(INCOMPLETE)
+
+### Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
+(INCOMPLETE)
 
 
+#
+# ---------------------Past Deliverables--------------------
 
 # CSS Deliverable
 ## Properly styled CSS
@@ -35,8 +62,7 @@ You're lookin at it.
 ### Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
 Check.
 
-#
-# ---------------------Past Deliverables--------------------
+
 
 # HTML Deliverable
 
