@@ -55,27 +55,34 @@ function correct_login(given_name, given_password) {
     return false;
 }
 
-// ----------------Global habit counter-------------------------
+// ----------------habit counter-------------------------
 
-function get_global_habit_counter_int() {
-    global_habit_counter = localStorage.getItem('global_habit_counter');
-    return parseInt(global_habit_counter);
+function get_habit_counter_int() {
+    habit_counter = localStorage.getItem('habit_counter') ?? 0;
+    return parseInt(habit_counter);
 }
 
-function add_to_global_habit_counter() {
-    let global_habit_counter = get_global_habit_counter_int() + 1;
-    localStorage.setItem('global_habit_counter', global_habit_counter);
+function increment_habit_counter() {
+    let habit_counter = get_habit_counter_int();
+    habit_counter++;
+    localStorage.setItem('habit_counter', habit_counter);
 }
 
-function update_global_habit_counter_display() {
-    let habit_counter_el = document.querySelector('#global_habit_counter');
-    let habit_int = get_global_habit_counter_int();
+function display_habit_counter() {
+    let habit_counter_el = document.querySelector('#habit_counter');
+    let habit_int = get_habit_counter_int();
     habit_counter_el.textContent = habit_int;
 }
 
-// main
-localStorage.setItem('global_habit_counter', 0);
-update_global_habit_counter_display();
+function increment_and_display_habit_counter() {
+    increment_habit_counter();
+    display_habit_counter();
+}
+
+//----------------main--------------------------
+display_habit_counter();
+setInterval(increment_and_display_habit_counter, 1500);
+
 
 
 

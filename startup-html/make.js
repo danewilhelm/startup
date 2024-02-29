@@ -30,10 +30,15 @@ class Habit {
     }
 }
 
-function add_to_global_habit_counter() {
-    global_habit_counter = localStorage.getItem('global_habit_counter');
-    global_habit_counter = parseInt(global_habit_counter) + 1;
-    localStorage.setItem('global_habit_counter', global_habit_counter);
+function get_habit_counter_int() {
+    habit_counter = localStorage.getItem('habit_counter') ?? 0;
+    return parseInt(habit_counter);
+}
+
+function increment_habit_counter() {
+    let habit_counter = get_habit_counter_int();
+    habit_counter++;
+    localStorage.setItem('habit_counter', habit_counter);
 }
 
 // called when the submit button is clicked
@@ -57,7 +62,7 @@ function submit_habit() {
 
     // send new data to local storage
     update_current_profile(current_profile);
-    add_to_global_habit_counter();
+    increment_habit_counter();
     console.log("habit successfully submitted");
 }
 
@@ -74,6 +79,8 @@ function update_name() {
 
 // main
 update_name();
+setInterval(increment_and_display_habit_counter, 10000);
+
 
 
 
