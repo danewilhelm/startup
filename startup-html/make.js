@@ -30,6 +30,12 @@ class Habit {
     }
 }
 
+function add_to_global_habit_counter() {
+    global_habit_counter = localStorage.getItem('global_habit_counter');
+    global_habit_counter = parseInt(global_habit_counter) + 1;
+    localStorage.setItem('global_habit_counter', global_habit_counter);
+}
+
 // called when the submit button is clicked
 function submit_habit() {
     // get cue and response input, and current profile
@@ -51,6 +57,7 @@ function submit_habit() {
 
     // send new data to local storage
     update_current_profile(current_profile);
+    add_to_global_habit_counter();
     console.log("habit successfully submitted");
 }
 

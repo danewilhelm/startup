@@ -1,3 +1,16 @@
+//------------local storage retrieve and send helper functions---------------------
+function send_object_to_local_storage(storage_name, storage_object) {
+    return localStorage.setItem(storage_name, JSON.stringify(storage_object));
+}
+
+function retrieve_object_from_local_storage(storage_name) {
+    return JSON.parse(localStorage.getItem(storage_name));
+}
+
+function update_current_profile_name(profile_name) {
+    return localStorage.setItem("current_profile_name", profile_name);
+}
+
 //------------profile login functions------------------
 // called when a user attempts to login
 function login() {
@@ -42,19 +55,34 @@ function correct_login(given_name, given_password) {
     return false;
 }
 
+// ----------------Global habit counter-------------------------
 
-
-
-//------------local storage retrieve and send helper functions---------------------
-function send_object_to_local_storage(storage_name, storage_object) {
-    return localStorage.setItem(storage_name, JSON.stringify(storage_object));
+function get_global_habit_counter_int() {
+    global_habit_counter = localStorage.getItem('global_habit_counter');
+    return parseInt(global_habit_counter);
 }
 
-function retrieve_object_from_local_storage(storage_name) {
-    return JSON.parse(localStorage.getItem(storage_name));
+function add_to_global_habit_counter() {
+    let global_habit_counter = get_global_habit_counter_int() + 1;
+    localStorage.setItem('global_habit_counter', global_habit_counter);
 }
 
-function update_current_profile_name(profile_name) {
-    return localStorage.setItem("current_profile_name", profile_name);
+function update_global_habit_counter_display() {
+    let habit_counter_el = document.querySelector('#global_habit_counter');
+    let habit_int = get_global_habit_counter_int();
+    habit_counter_el.textContent = habit_int;
 }
+
+// main
+localStorage.setItem('global_habit_counter', 0);
+update_global_habit_counter_display();
+
+
+
+
+
+
+
+
+
 
