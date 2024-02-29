@@ -6,7 +6,7 @@ See "index.js". The login function supports creating user profiles that can be r
 Each profile stores the user's name, password, and a list of submitted habits. These profiles will be stored in the database later on so that users can log in on any device and continue submitting more habits upon the ones they already created on a different device. When a new profile is created (see index.js), or when a new habit is submitted (see make.js), this data is updated in localStorage.
 
 ## 20% JavaScript support for future WebSocket.
-(INCOMPLETE)
+The display of the websocket is on the homepage. The habit counter increments on a loop, simulating other users submitting their habits and showing the live counter on your computer.
 
 ## 40% JavaScript support for your application's interaction logic.
 After the user logs in, the user can now submit habits. Every habit they submit can be viewed as a list the habit library page. Each new habit submitted (no matter which profile it was created on) updates the "Global Habits Made" counter.
@@ -19,11 +19,10 @@ See simon.habitmaker.click
 See bottom of every page.
 
 ### Prerequisite:Git repository README.md file
-(INCOMPLETE)
+You're lookin' at it.
 
 ### Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
-(INCOMPLETE)
-
+You betcha.
 
 #
 # ---------------------Past Deliverables--------------------
