@@ -1,3 +1,36 @@
+# Service Deliverable
+Backend web service support and interaction
+## 40% - Create an HTTP service using Node.js and Express
+(INCOMPLETE)
+
+## 10% - Frontend served up using Express static middleware
+(INCOMPLETE)
+
+## 10% - Your frontend calls third party service endpoints
+(INCOMPLETE)
+
+## 20% - Your backend provides service endpoints
+(INCOMPLETE)
+
+## 20% - Your frontend calls your service endpoints
+(INCOMPLETE)
+
+## Misc. Prerequisites
+### Prerequisite: Simon JavaScript deployed to your production environment
+See simon.habitmaker.click
+
+### Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
+See bottom of every page.
+
+### Prerequisite:Git repository README.md file
+(INCOMPLETE)
+
+### Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
+(INCOMPLETE)
+
+#
+# ---------------------Past Deliverables--------------------
+
 # Javascript Deliverable
 ## 20% JavaScript support for future login.
 See "index.js". The login function supports creating user profiles that can be reaccessed with the correct login info.
@@ -24,8 +57,7 @@ You're lookin' at it.
 ### Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
 You betcha.
 
-#
-# ---------------------Past Deliverables--------------------
+
 
 # CSS Deliverable
 ## Properly styled CSS
