@@ -1,10 +1,11 @@
 # Service Deliverable
 Backend web service support and interaction
 ## 40% - Create an HTTP service using Node.js and Express
-(INCOMPLETE)
+In backend.js, see the section with the dividing comment "// ------setting up express------"
+Also see the comment "----start listening for requests----"
 
 ## 10% - Frontend served up using Express static middleware
-(INCOMPLETE)
+In backend.js, see the comment "// Serve up the front-end static content hosting"
 
 ## 10% - Your frontend calls third party service endpoints
 (INCOMPLETE)
