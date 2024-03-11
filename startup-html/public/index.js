@@ -8,12 +8,12 @@ async function login() {
     let password = password_el.value;
 
     // Login checks
-    let attempted_profile = null; // FETCH REQUEST: get profile
+    let attempted_profile = await get_profile_from_backend(name); // FETCH REQUEST: get profile
     if (attempted_profile === null) {
         // Case 1: This is a new user
         attempted_profile = new Profile(name, password);
         send_object_to_local_storage(name, attempted_profile);
-        // FETCH REQUEST: post profile
+        post_profile_to_backend(attempted_profile);    // FETCH REQUEST: post profile
     } else if (! (correct_login(name, password, attempted_profile))) { 
         // Case 2: An existing user failed to log in
         console.log("Incorrect login. Try checking your username or password.");
@@ -81,10 +81,6 @@ function increment_habit_counter() {
 }
 
 
-/**
- * 
- * @param {string} profile_name
- */
 async function get_profile_from_backend(profile_name) {
     let fetch_string = "/api/get_profile/" + profile_name;
     const response = await fetch(fetch_string, {
