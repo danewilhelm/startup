@@ -1,5 +1,6 @@
 // ----------setting up express----------------------
 const express = require('express');
+const { default: test } = require('node:test');
 const app = express();
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
@@ -15,25 +16,36 @@ app.use(express.static('public'));
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
+//------------ DEBUG TESTING----------------
+class Profile {
+    constructor(name, password) {
+        this.name = name;
+        this.password = password;
+        this.habit_list = [];
+    }
+}
+let test_profile = new Profile("Jimmy", "Joe");
+
 //-----------endpoints (aka routes)--------------------
 let profile_storage = {};
+profile_storage[test_profile.name] = test_profile; // DEBUG
 let habit_count = 4;
 
 // Request: get specified profile
-apiRouter.get('/get/profile', (req, res) => {
-    requested_profile = req.body;
-    res.send(profile_storage[requested_profile.name]);
+apiRouter.get('/get_profile/:profile_name', (req, res) => {
+    let requested_profile = profile_storage[req.params.profile_name];
+    res.send(requested_profile);
 });
 
 
 // Request: post specified profile
-apiRouter.post('/post/profile', (req, _res) => {
+apiRouter.post('/post_profile', (req, _res) => {
     let new_profile = req.body;
     profile_storage[new_profile.name] = new_profile;
 });
 
 // Request: put specified profile
-apiRouter.put('/put/profile', (req, _res) => {
+apiRouter.put('/put_profile', (req, _res) => {
     let updated_profile = req.body;
     profile_storage[updated_profile.name] = updated_profile;
 });
