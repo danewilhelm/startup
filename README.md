@@ -11,7 +11,7 @@ In backend.js, see the comment "// Serve up the front-end static content hosting
 (INCOMPLETE)
 
 ## 20% - Your backend provides service endpoints
-(INCOMPLETE)
+Mostly done, but haven't tested with frontend. (INCOMPLETE)
 
 ## 20% - Your frontend calls your service endpoints
 (INCOMPLETE)
