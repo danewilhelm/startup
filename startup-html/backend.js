@@ -37,28 +37,33 @@ apiRouter.get('/get_profile/:profile_name', (req, res) => {
     res.send(requested_profile);
 });
 
-
 // Request: post specified profile
-apiRouter.post('/post_profile', (req, _res) => {
+apiRouter.post('/post_profile', (req, res) => {
     let new_profile = req.body;
     profile_storage[new_profile.name] = new_profile;
+    res.send("");
 });
 
 // Request: put specified profile
-apiRouter.put('/put_profile', (req, _res) => {
+apiRouter.put('/put_profile', (req, res) => {
     let updated_profile = req.body;
     profile_storage[updated_profile.name] = updated_profile;
+    res.send("");
+
 });
 
-
 // Request: get habit count
-apiRouter.get('/get/habit_count', (_req, res) => {
-    res.send(habit_count.toString());
+apiRouter.get('/get_habit_count', (_req, res) => {
+    res.send(JSON.stringify(habit_count));
 });
 
 // Request: put incremented habit count
-apiRouter.put('/put/habit_count', (req, _res) => {
-    habit_count = req.body;
+apiRouter.put('/put_habit_count', (req, res) => {
+    let recieved_habit_count = req.body;
+    // console.log(recieved_habit_count);
+    // console.log(habit_count);
+    habit_count = recieved_habit_count.habit_count;
+    res.send("");
 });
 
 // Request: Return the application's default page if the path is unknown

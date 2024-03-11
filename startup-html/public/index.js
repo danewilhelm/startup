@@ -14,7 +14,7 @@ async function login() {
         attempted_profile = new Profile(name, password);
         send_object_to_local_storage(name, attempted_profile);
         post_profile_to_backend(attempted_profile);    // FETCH REQUEST: post profile
-    } else if (! (correct_login(name, password, attempted_profile))) { 
+    } else if (!(correct_login(name, password, attempted_profile))) {
         // Case 2: An existing user failed to log in
         console.log("Incorrect login. Try checking your username or password.");
         return;
@@ -81,11 +81,13 @@ function increment_habit_counter() {
 }
 
 
+
+
 async function get_profile_from_backend(profile_name) {
     let fetch_string = "/api/get_profile/" + profile_name;
     const response = await fetch(fetch_string, {
         method: "GET",
-        headers: {"content-type": "application/json"},
+        headers: { "content-type": "application/json" },
     });
     // console.log(typeof response, response, typeof await response.text()); // DEBUG
     let response_text = await response.text();
@@ -98,54 +100,76 @@ async function get_profile_from_backend(profile_name) {
 }
 
 async function post_profile_to_backend(profile) {
-    await fetch("api/post_profile", {
-    method: "POST",
-    headers: {"content-type": "application/json"},
-    body: JSON.stringify(profile)
+    await fetch("/api/post_profile", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(profile)
     });
 }
 
-async function post_profile_to_backend(profile) {
-    await fetch("api/put_profile", {
-    method: "PUT",
-    headers: {"content-type": "application/json"},
-    body: JSON.stringify(profile)
+// UNTESTED
+async function put_profile_to_backend(profile) {
+    await fetch("/api/put_profile", {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(profile)
     });
 }
 
-// async function saveScore(score) {
-//     const userName = this.getPlayerName();
-//     const date = new Date().toLocaleDateString();
-//     const newScore = {name: userName, score: score, date: date};
+async function put_habit_count_to_backend(habit_count) {
+    // if (typeof habit_count === "number") {
+    //     habit_count.toString();
+    // }
+    console.log("inner flag 1");
+    await fetch("/api/put_habit_count", {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({habit_count})
+    });
+    console.log("inner flag 2");
+}
 
-//     try {
-//         const response = await fetch('/api/score', {
-//         method: 'POST',
-//         headers: {'content-type': 'application/json'},
-//         body: JSON.stringify(newScore),
-//         });
-
-//         // Store what the service gave us as the high scores
-//         const scores = await response.json();
-//         localStorage.setItem('scores', JSON.stringify(scores));
-//     } catch {
-//         // If there was an error then just track scores locally
-//         this.updateScoresLocal(newScore);
-//     }
-// }
-
+async function get_habit_count_from_backend() {
+    const response = await fetch("/api/get_habit_count", {
+        method: "GET",
+        headers: { "content-type": "application/json"}
+    });
+    let habit_count = await response.text();
+    return habit_count;
+}
 
 // ============main=============================
-// testing get profile (normal case and null case)
-let result1 = get_profile_from_backend("Jimmy"); // DEBUG
-result1.then((result) => console.log(result));  // DEBUG
-let result2 = get_profile_from_backend("John"); // DEBUG
-result2.then((result) => console.log(result));  // DEBUG
-// testing post profile
-let test_frontend_profile = new Profile("Jane", "123"); // DEBUG
-post_profile_to_backend(test_frontend_profile); // DEBUG
-let result3 = get_profile_from_backend("Jane"); // DEBUG
-result3.then((result) => console.log(result)); // DEBUG
+async function test_main() {
+// testing get profile (existing test case and null case)
+    // let result1 = get_profile_from_backend("Jimmy"); // DEBUG
+    // result1.then((result) => console.log(result));  // DEBUG
+    // let result2 = get_profile_from_backend("John"); // DEBUG
+    // result2.then((result) => console.log(result));  // DEBUG
+
+    // testing post profile
+    // let test_frontend_profile = new Profile("Jane", "123"); // DEBUG
+    // post_profile_to_backend(test_frontend_profile); // DEBUG
+    // let result3 = get_profile_from_backend("Jane"); // DEBUG
+    // result3.then((result) => console.log(result)); // DEBUG
+
+    // // testing get profile (inputted test case)
+    // let result4 = get_profile_from_backend("Pirate"); // DEBUG
+    // result4.then((result) => console.log(result)); // DEBUG
+
+    // // testing get habit count
+    // let result5 = get_habit_count_from_backend();
+    // result5.then((result) => console.log(result));
+
+    // testing put habit count
+    console.log("flag 1");
+    await put_habit_count_to_backend(20);
+    console.log("flag 2");
+    let result6 = get_habit_count_from_backend();
+    console.log("flag 3");
+    result6.then((result) => console.log(result));
+    console.log("flag 4");
+}
+test_main();
 
 // display_habit_counter();
 // setInterval(increment_and_display_habit_counter, 1500);
