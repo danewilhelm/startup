@@ -20,19 +20,34 @@ let profile_storage = {};
 let habit_count = 4;
 
 // Request: get specified profile
-apiRouter.get('/profile/:profile_name', (req, res) => {
-    res.send(profile_storage[req.params.profile_name]);
+apiRouter.get('/get/profile', (req, res) => {
+    requested_profile = req.body;
+    res.send(profile_storage[requested_profile.name]);
 });
 
-// Request: put/post specified profile
+
+// Request: post specified profile
+apiRouter.post('/post/profile', (req, _res) => {
+    let new_profile = req.body;
+    profile_storage[new_profile.name] = new_profile;
+});
+
+// Request: put specified profile
+apiRouter.put('/put/profile', (req, _res) => {
+    let updated_profile = req.body;
+    profile_storage[updated_profile.name] = updated_profile;
+});
 
 
 // Request: get habit count
-apiRouter.get('/habit_count', (_req, res) => {
+apiRouter.get('/get/habit_count', (_req, res) => {
     res.send(habit_count.toString());
 });
 
-// Request: put/post incremented habit count
+// Request: put incremented habit count
+apiRouter.put('/put/habit_count', (req, _res) => {
+    habit_count = req.body;
+});
 
 // Request: Return the application's default page if the path is unknown
 app.use((_req, res) => {
@@ -40,14 +55,7 @@ app.use((_req, res) => {
 });
 
 
-
-
-
   //--------------start listening for requests-------------
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 });
-
-
-// Put vs post (example: profiles)
-// How to create .gitignore file and add node_modules to it

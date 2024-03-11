@@ -1,15 +1,18 @@
+// import { send_object_to_local_storage } from './common_functions.js';
+// import { retrieve_object_from_local_storage } from './common_functions.js';
+// // import { retrieve_current_profile } from './common_functions.js';
+// import { get_habit_counter_int } from './common_functions.js'; // used in increment_habit_counter and display_habit_counter
+// import { increment_habit_counter } from './common_functions.js';
+// import { update_name } from './common_functions.js';
+
 //------------local storage retrieve and send helper functions---------------------
-function send_object_to_local_storage(storage_name, storage_object) {
-    return localStorage.setItem(storage_name, JSON.stringify(storage_object));
-}
+// function send_object_to_local_storage(storage_name, storage_object) {
+//     return localStorage.setItem(storage_name, JSON.stringify(storage_object));
+// }
 
-function retrieve_object_from_local_storage(storage_name) {
-    return JSON.parse(localStorage.getItem(storage_name));
-}
-
-function update_current_profile_name(profile_name) {
-    return localStorage.setItem("current_profile_name", profile_name);
-}
+// function retrieve_object_from_local_storage(storage_name) {
+//     return JSON.parse(localStorage.getItem(storage_name));
+// }
 
 //------------profile login functions------------------
 // called when a user attempts to login
@@ -32,7 +35,7 @@ function login() {
         return;
     }
     // The user successfully logged in
-    update_current_profile_name(attempted_profile.name);
+    localStorage.setItem("current_profile_name", name);
     console.log("User successfully logged in");
     window.location.href = 'make.html';
 }
@@ -68,6 +71,10 @@ function increment_habit_counter() {
     localStorage.setItem('habit_counter', habit_counter);
 }
 
+
+
+//=====================Helper Functions===========================================
+// --------------------Unique Helper Functions------------------------------------
 function display_habit_counter() {
     let habit_counter_el = document.querySelector('#habit_counter');
     let habit_int = get_habit_counter_int();
@@ -79,7 +86,30 @@ function increment_and_display_habit_counter() {
     display_habit_counter();
 }
 
-//----------------main--------------------------
+// --------------------reused helper functions------------------------------------
+// localStorage function
+function send_object_to_local_storage(storage_name, storage_object) {
+    return localStorage.setItem(storage_name, JSON.stringify(storage_object));
+}
+
+// localStorage function
+function retrieve_object_from_local_storage(storage_name) {
+    return JSON.parse(localStorage.getItem(storage_name));
+}
+
+// habit counter functions
+function get_habit_counter_int() {
+    let habit_counter = localStorage.getItem('habit_counter') ?? 0;
+    return parseInt(habit_counter);
+}
+
+// habit counter function
+function increment_habit_counter() {
+    let habit_counter = get_habit_counter_int() + 1;
+    localStorage.setItem('habit_counter', habit_counter);
+}
+
+// ============main=============================
 display_habit_counter();
 setInterval(increment_and_display_habit_counter, 1500);
 
