@@ -82,14 +82,13 @@ function increment_habit_counter() {
 
 
 
-
+//----------------Backend helper functions---------------------------------------------
 async function get_profile_from_backend(profile_name) {
     let fetch_string = "/api/get_profile/" + profile_name;
     const response = await fetch(fetch_string, {
         method: "GET",
         headers: { "content-type": "application/json" },
     });
-    // console.log(typeof response, response, typeof await response.text()); // DEBUG
     let response_text = await response.text();
     if (response_text === "") {
         return null;
@@ -107,7 +106,6 @@ async function post_profile_to_backend(profile) {
     });
 }
 
-// UNTESTED
 async function put_profile_to_backend(profile) {
     await fetch("/api/put_profile", {
         method: "PUT",
@@ -117,16 +115,11 @@ async function put_profile_to_backend(profile) {
 }
 
 async function put_habit_count_to_backend(habit_count) {
-    // if (typeof habit_count === "number") {
-    //     habit_count.toString();
-    // }
-    console.log("inner flag 1");
     await fetch("/api/put_habit_count", {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({habit_count})
     });
-    console.log("inner flag 2");
 }
 
 async function get_habit_count_from_backend() {
@@ -140,39 +133,38 @@ async function get_habit_count_from_backend() {
 
 // ============main=============================
 async function test_main() {
-// testing get profile (existing test case and null case)
-    // let result1 = get_profile_from_backend("Jimmy"); // DEBUG
-    // result1.then((result) => console.log(result));  // DEBUG
-    // let result2 = get_profile_from_backend("John"); // DEBUG
-    // result2.then((result) => console.log(result));  // DEBUG
+    // testing get profile (existing test case and null case)
+    let result1 = get_profile_from_backend("Jimmy"); // DEBUG
+    result1.then((result) => console.log(result));  // DEBUG
+    let result2 = get_profile_from_backend("John"); // DEBUG
+    result2.then((result) => console.log(result));  // DEBUG
 
     // testing post profile
-    // let test_frontend_profile = new Profile("Jane", "123"); // DEBUG
-    // post_profile_to_backend(test_frontend_profile); // DEBUG
-    // let result3 = get_profile_from_backend("Jane"); // DEBUG
-    // result3.then((result) => console.log(result)); // DEBUG
+    let test_frontend_profile = new Profile("Jane", "123"); // DEBUG
+    post_profile_to_backend(test_frontend_profile); // DEBUG
+    let result3 = get_profile_from_backend("Jane"); // DEBUG
+    result3.then((result) => console.log(result)); // DEBUG
 
-    // // testing get profile (inputted test case)
-    // let result4 = get_profile_from_backend("Pirate"); // DEBUG
-    // result4.then((result) => console.log(result)); // DEBUG
+    // testing get profile (inputted test case)
+    let result4 = get_profile_from_backend("Pirate"); // DEBUG
+    result4.then((result) => console.log(result)); // DEBUG
 
-    // // testing get habit count
-    // let result5 = get_habit_count_from_backend();
-    // result5.then((result) => console.log(result));
+    // testing get habit count
+    let result5 = get_habit_count_from_backend();
+    result5.then((result) => console.log(result));
 
     // testing put habit count
-    console.log("flag 1");
     await put_habit_count_to_backend(20);
-    console.log("flag 2");
     let result6 = get_habit_count_from_backend();
-    console.log("flag 3");
     result6.then((result) => console.log(result));
-    console.log("flag 4");
 }
-test_main();
+// test_main();
+function normal_main() {
+    display_habit_counter();
+    setInterval(increment_and_display_habit_counter, 3000);
+}
 
-// display_habit_counter();
-// setInterval(increment_and_display_habit_counter, 1500);
+normal_main();
 
 
 

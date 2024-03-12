@@ -1,7 +1,8 @@
 // -----------------Generate list of habits--------------
-function display_habit_library() {
+async function display_habit_library() {
     // retrieve habit_list
-    let current_profile = retrieve_current_profile();
+    let current_profile_name = localStorage.getItem("current_profile_name");
+    let current_profile = await get_profile_from_backend(current_profile_name);
     let habit_list = current_profile.habit_list;
     
 
@@ -30,7 +31,7 @@ function insert_child(parent_selector, child_element_type ,text) {
     parent_element.appendChild(new_child);
 }
 
-// --------------------reused helper functions------------------------------------
+// --------------------localStorage helper functions------------------------------------
 // called in main (after the page loads)
 function update_name() {
     // get name element and current profile
@@ -43,9 +44,25 @@ function update_name() {
 
 function retrieve_current_profile() {
     // grab the string name of the current profile
-    let current_profile_name = localStorage.getItem("current_profile_name")
+    let current_profile_name = localStorage.getItem("current_profile_name");
     // then return the profile object associated with that string name
     return JSON.parse(localStorage.getItem(current_profile_name));
+}
+
+//----------------Backend helper functions---------------------------------------------
+async function get_profile_from_backend(profile_name) {
+    let fetch_string = "/api/get_profile/" + profile_name;
+    const response = await fetch(fetch_string, {
+        method: "GET",
+        headers: { "content-type": "application/json" },
+    });
+    let response_text = await response.text();
+    if (response_text === "") {
+        return null;
+    } else {
+        let retrieved_profile = (JSON.parse(response_text));
+        return retrieved_profile;
+    }
 }
 
 // ============main=============================

@@ -49,7 +49,6 @@ apiRouter.put('/put_profile', (req, res) => {
     let updated_profile = req.body;
     profile_storage[updated_profile.name] = updated_profile;
     res.send("");
-
 });
 
 // Request: get habit count
