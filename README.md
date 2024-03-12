@@ -1,20 +1,21 @@
 # Service Deliverable
 Backend web service support and interaction
 ## 40% - Create an HTTP service using Node.js and Express
-In backend.js, see the section with the dividing comment "// ------setting up express------" <br/>
-Also see the comment "----start listening for requests----"
+In the backend, see the section with the dividing comment: // ------setting up express------ <br/>
+Also see the comment: ----start listening for requests----
 
 ## 10% - Frontend served up using Express static middleware
-In backend.js, see the comment "// Serve up the front-end static content hosting"
+In the backend, see the comment: // Serve up the front-end static content hosting
 
 ## 10% - Your frontend calls third party service endpoints
-(INCOMPLETE)
+In make.js, see display_quote(). I fetch a wise quote from a 3rd party service and display it in bold above the habit input boxes.
 
 ## 20% - Your backend provides service endpoints
-Mostly done, but haven't tested with frontend. (INCOMPLETE)
+In the backend, see the section with the dividing comment: //-----------endpoints (aka routes)--------------------
 
 ## 20% - Your frontend calls your service endpoints
-(INCOMPLETE)
+In index.js, make.js, and library.js, you can find the frontend helper functions for calling  the service endpoints. See the comment: //-------Backend helper functions------------- in each file. These functions are called within the following methods: index.js: login(), display_habit_counter() || make.js: make_habit() ||  || library.js: display_library()
+
 
 ## Misc. Prerequisites
 ### Prerequisite: Simon JavaScript deployed to your production environment
@@ -24,10 +25,10 @@ See simon.habitmaker.click
 See bottom of every page.
 
 ### Prerequisite:Git repository README.md file
-(INCOMPLETE)
+Ya lookin' at it mate.
 
 ### Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
-(INCOMPLETE)
+\(^v^)/
 
 #
 # ---------------------Past Deliverables--------------------
