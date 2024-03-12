@@ -43,6 +43,26 @@ function update_current_profile(updated_profile) {
     send_object_to_local_storage(updated_profile.name, updated_profile);
 }
 
+function display_quote() {
+    fetch('https://api.quotable.io/random')
+        .then((response) => response.json())
+        .then((data) => {
+        const container_el = document.querySelector('#quote');
+        container_el.textContent = "";
+        
+        const quote_el = document.createElement('p');
+        quote_el.classList.add('quote');
+        const author_el = document.createElement('p');
+        author_el.classList.add('author');
+
+        quote_el.textContent = data.content;
+        author_el.textContent = data.author;
+
+        container_el.appendChild(quote_el);
+        container_el.appendChild(author_el);
+        });
+    }
+
 // --------------------reused helper functions------------------------------------
 // localStorage function
 function send_object_to_local_storage(storage_name, storage_object) {
@@ -148,8 +168,10 @@ async function test_main() {
 // Normal main
 function normal_main() {
     update_name();
+    display_quote();
+
     // setInterval(increment_habit_counter, 10000);
 }
 
-test_main();
+// test_main();
 normal_main();
