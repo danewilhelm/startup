@@ -1,9 +1,24 @@
+# Login Deliverable
+
 Application authentication and authorization
 20% - Supports new user registration
 20% - Supports existing user authentication
 20% - Stores application data in MongoDB
 20% - Stores and retrieves credentials in MongoDB
 20% - Restricts application functionality based upon authentication
+
+## Misc. Prerequisites
+### Prerequisite: Simon JavaScript deployed to your production environment
+See simon.habitmaker.click
+
+### Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
+See bottom of every page.
+
+### Prerequisite:Git repository README.md file
+Ya lookin' at it mate.
+
+### Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
+\(^v^)/
 
 
 # Service Deliverable
