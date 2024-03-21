@@ -1,3 +1,11 @@
+Application authentication and authorization
+20% - Supports new user registration
+20% - Supports existing user authentication
+20% - Stores application data in MongoDB
+20% - Stores and retrieves credentials in MongoDB
+20% - Restricts application functionality based upon authentication
+
+
 # Service Deliverable
 Backend web service support and interaction
 ## 40% - Create an HTTP service using Node.js and Express
