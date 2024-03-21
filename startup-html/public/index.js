@@ -46,13 +46,13 @@ function correct_login(given_name, given_password, attempted_profile) {
     return false;
 }
 
-function display_habit_counter() {
+async function display_habit_counter() {
     let habit_counter_el = document.querySelector('#habit_counter');
-    let habit_int = get_habit_counter_int();
+    let habit_int = await get_habit_count_from_backend();
     habit_counter_el.textContent = habit_int;
 }
 
-function increment_and_display_habit_counter() {
+async function increment_and_display_habit_counter() {
     increment_habit_counter();
     display_habit_counter();
 }
