@@ -9,7 +9,7 @@ Application authentication and authorization
 
 ## Misc. Prerequisites
 ### Prerequisite: Simon JavaScript deployed to your production environment
-See simon.habitmaker.click
+(INCOMPLETE)
 
 ### Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
 See bottom of every page.
@@ -19,6 +19,10 @@ Ya lookin' at it mate.
 
 ### Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
 \(^v^)/
+
+
+#
+# ---------------------Past Deliverables--------------------
 
 
 # Service Deliverable
@@ -53,8 +57,8 @@ Ya lookin' at it mate.
 ### Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
 \(^v^)/
 
-#
-# ---------------------Past Deliverables--------------------
+
+
 
 # Javascript Deliverable
 ## 20% JavaScript support for future login.
