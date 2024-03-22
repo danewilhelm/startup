@@ -1,11 +1,20 @@
 # Login Deliverable
-
 Application authentication and authorization
-20% - Supports new user registration
-20% - Supports existing user authentication
-20% - Stores application data in MongoDB
-20% - Stores and retrieves credentials in MongoDB
-20% - Restricts application functionality based upon authentication
+
+## 20% - Supports new user registration
+(INCOMPLETE)
+
+## 20% - Supports existing user authentication
+(INCOMPLETE)
+
+## 20% - Stores application data in MongoDB
+(INCOMPLETE)
+
+## 20% - Stores and retrieves credentials in MongoDB
+(INCOMPLETE)
+
+## 20% - Restricts application functionality based upon authentication
+(INCOMPLETE)
 
 ## Misc. Prerequisites
 ### Prerequisite: Simon JavaScript deployed to your production environment
