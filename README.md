@@ -8,7 +8,7 @@ In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_
 In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_correct'... This endpoint handles the case when an existing username is used.
 
 ## 20% - Stores application data in MongoDB
-In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_correct'... This endpoint handles the case when new username is used.
+INCOMPLETE: when a habit is submitted, store it in the database. Also update the global counter properly in the database.
 
 ## 20% - Stores and retrieves credentials in MongoDB
 In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_correct'... This endpoint retrieves the profile credentials from the database using "DB.get_profile(attempted_name);"  It also stores new credentials for a new profile using "DB.insert_new_profile(new_profile);". Note that in database.js, the insert_new_profile() method converts the password from plain text to hashed.
@@ -27,7 +27,7 @@ See bottom of every page.
 Ya lookin' at it mate.
 
 ### Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
-\(^v^)/
+\\(^v^)/
 
 
 #
