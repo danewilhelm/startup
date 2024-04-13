@@ -1,7 +1,13 @@
-// ----------setting up express----------------------
+// ----------setting up the backend----------------------
 const express = require('express');
 const { default: test } = require('node:test');
 const app = express();
+
+// setting up database usage
+const DB = require('./database.js');
+const bcrypt = require('bcrypt');
+
+
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
@@ -30,6 +36,25 @@ let test_profile = new Profile("Jimmy", "Joe");
 let profile_storage = {};
 profile_storage[test_profile.name] = test_profile; // DEBUG
 let habit_count = 4;
+
+apiRouter.get('/is_login_correct', async (req, res) => {
+    let attempted_name = req.body.attempted_name;
+    let attempted_password = req.body.attempted_password;
+    let inquired_profile = DB.get_profile(attempted_name);
+    // if there is a profile with this name, attempt to log in
+    if (inquired_profile) {
+        if (await bcrypt.compare(attempted_password, inquired_profile.password)) {
+            res.send({can_login : true});
+        } else {
+            res.send({can_login : false});
+        }
+    } else {
+        // else, a new profile must be created
+        let new_profile = Profile(attempted_name, attempted_password);
+        DB.insert_new_profile(new_profile);
+        res.send({can_login : true});
+    }
+});
 
 // Request: get specified profile
 apiRouter.get('/get_profile/:profile_name', (req, res) => {

@@ -26,6 +26,16 @@ async function login() {
     window.location.href = 'make.html';
 }
 
+// UNTESTED
+async function is_login_correct(input_name, input_password) {
+    await fetch("/api/is_login_correct", {
+        method: "GET",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({attempted_name: input_name, attempted_password: input_password})
+    });
+}
+
+
 
 class Profile {
     constructor(name, password) {
