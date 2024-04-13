@@ -7,32 +7,29 @@ async function login() {
     let name = name_el.value;
     let password = password_el.value;
 
-    // Login checks
-    let attempted_profile = await get_profile_from_backend(name); // FETCH REQUEST: get profile
-    if (attempted_profile === null) {
-        // Case 1: This is a new user
-        attempted_profile = new Profile(name, password);
-        send_object_to_local_storage(name, attempted_profile);
-        post_profile_to_backend(attempted_profile);    // FETCH REQUEST: post profile
-    } else if (!(correct_login(name, password, attempted_profile))) {
-        // Case 2: An existing user failed to log in
+    if (await is_login_correct(name, password)) {
+        localStorage.setItem("current_profile_name", name);
+        console.log("User successfully logged in");
+        window.location.href = 'make.html';
+    } else {
         console.log("Incorrect login. Try checking your username or password.");
-        return;
     }
-    // The user successfully logged in
-    localStorage.setItem("current_profile_name", name);
-    console.log("User successfully logged in");
-    authenticated = true;
-    window.location.href = 'make.html';
 }
 
 // UNTESTED
 async function is_login_correct(input_name, input_password) {
-    await fetch("/api/is_login_correct", {
-        method: "GET",
+    const response = await fetch("/api/is_login_correct", {
+        method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({attempted_name: input_name, attempted_password: input_password})
     });
+
+    let response_json = await response.json();
+    if (response_json.can_login) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 
@@ -125,7 +122,7 @@ async function put_profile_to_backend(profile) {
     });
 }
 
-async function put_habit_count_to_backend(habit_count) {
+async function increment_habit_count_in_backend(habit_count) {
     await fetch("/api/put_habit_count", {
         method: "PUT",
         headers: { "content-type": "application/json" },
@@ -165,7 +162,7 @@ async function test_main() {
     result5.then((result) => console.log(result));
 
     // testing put habit count
-    await put_habit_count_to_backend(20);
+    await increment_habit_count_in_backend(20);
     let result6 = get_habit_count_from_backend();
     result6.then((result) => console.log(result));
 }

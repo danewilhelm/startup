@@ -1,11 +1,14 @@
 // called when the submit button is clicked
 async function submit_habit() {
-    // get cue and response input, and current profile
+    // get cue and response input
     const cue_el = document.querySelector('#cue');
     const response_el = document.querySelector('#response');
     let cue = cue_el.value;
     let response = response_el.value;
-    let current_profile = retrieve_current_profile();
+
+    // get the current profile
+    let current_profile_name = localStorage.getItem("current_profile_name");
+    let current_profile = await get_profile_from_backend(current_profile_name);
 
     // create Habit instance
     let submitted_habit = new Habit(cue, response);
@@ -16,15 +19,10 @@ async function submit_habit() {
     // clear the input fields for the cue and response
     cue_el.value = '';
     response_el.value = '';
-
-    // send new data to local storage
-    update_current_profile(current_profile);
-    increment_habit_counter();
     
     // send new data to backend
     await put_profile_to_backend(current_profile);
-    let incremented_habit_count = get_habit_counter_int();
-    await put_habit_count_to_backend(incremented_habit_count);
+    await increment_habit_count_in_backend();
     console.log("habit successfully submitted");
 }
 
@@ -72,7 +70,7 @@ function send_object_to_local_storage(storage_name, storage_object) {
 // localStorage function
 function retrieve_current_profile() {
     // grab the string name of the current profile
-    let current_profile_name = localStorage.getItem("current_profile_name")
+    let current_profile_name = localStorage.getItem("current_profile_name");
     // then return the profile object associated with that string name
     return JSON.parse(localStorage.getItem(current_profile_name));
 }
@@ -93,10 +91,10 @@ function increment_habit_counter() {
 function update_name() {
     // get name element and current profile
     const name_el = document.querySelector('.profile_name');
-    let current_profile = retrieve_current_profile();
+    let current_profile_name = localStorage.getItem("current_profile_name")
 
     // set name element to current profile's name
-    name_el.textContent = current_profile.name ?? 'Mystery user';
+    name_el.textContent = current_profile_name ?? 'Mystery user';
 }
 
 
@@ -145,11 +143,11 @@ async function get_habit_count_from_backend() {
     return habit_count;
 }
 
-async function put_habit_count_to_backend(habit_count) {
+async function increment_habit_count_in_backend() {
     await fetch("/api/put_habit_count", {
         method: "PUT",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({habit_count})
+        body: JSON.stringify({})
     });
 }
 

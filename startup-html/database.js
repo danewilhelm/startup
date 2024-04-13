@@ -20,26 +20,42 @@ async function main() {
 }
 main().catch(console.error);
 
-// Initialize collection object(s) from database
+// Initialize collection objects from database
 const profile_collection = db.collection("profile_collection");
+const habit_count_collection = db.collection("habit_count_collection");
 
-// UNTESTED
-function get_profile(name) {
-  return profile_collection.findOne({name: name});
+//-----------database helper functions---------------------
+async function get_profile(name) {
+  return await profile_collection.findOne({name: name});
 }
 
-// UNTESTED
-function update_profile(profile) {
-  db.collection.replaceOne({name: profile.name}, profile)
+async function update_profile(profile) {
+  await profile_collection.updateOne({name: profile.name}, {$set:{habit_list: profile.habit_list}});
 }
 
-// UNTESTED
 async function insert_new_profile(profile) {
   // Hash the password before we insert it into the database
-  profile.password = await bcrypt.hash(password, 5);
+  profile.password = await bcrypt.hash(profile.password, 5);
   await profile_collection.insertOne(profile);
   // not sure why we return it here yet
   return profile; 
+}
+
+async function increment_habit_counter() {
+  let habit_count_object = await habit_count_collection.findOne();
+  if (habit_count_object == null) {
+    await habit_count_collection.insertOne({habit_count: 1});
+  } else {
+    habit_count_object.habit_count = habit_count_object.habit_count + 1;
+    await habit_count_collection.replaceOne({}, habit_count_object);
+  }
+}
+
+module.exports = {
+  get_profile,
+  update_profile,
+  insert_new_profile,
+  increment_habit_counter
 }
 
 

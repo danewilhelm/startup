@@ -30,17 +30,15 @@ class Profile {
         this.habit_list = [];
     }
 }
-let test_profile = new Profile("Jimmy", "Joe");
+let test_profile = new Profile("Jimmy", "Joe"); // DEBUG
 
 //-----------endpoints (aka routes)--------------------
-let profile_storage = {};
-profile_storage[test_profile.name] = test_profile; // DEBUG
 let habit_count = 4;
 
-apiRouter.get('/is_login_correct', async (req, res) => {
-    let attempted_name = req.body.attempted_name;
+apiRouter.post('/is_login_correct', async (req, res) => {
+    let attempted_name = req.body.attempted_name;   
     let attempted_password = req.body.attempted_password;
-    let inquired_profile = DB.get_profile(attempted_name);
+    let inquired_profile = await DB.get_profile(attempted_name);
     // if there is a profile with this name, attempt to log in
     if (inquired_profile) {
         if (await bcrypt.compare(attempted_password, inquired_profile.password)) {
@@ -50,29 +48,31 @@ apiRouter.get('/is_login_correct', async (req, res) => {
         }
     } else {
         // else, a new profile must be created
-        let new_profile = Profile(attempted_name, attempted_password);
-        DB.insert_new_profile(new_profile);
+        let new_profile = new Profile(attempted_name, attempted_password);
+        await DB.insert_new_profile(new_profile);
         res.send({can_login : true});
     }
 });
 
 // Request: get specified profile
-apiRouter.get('/get_profile/:profile_name', (req, res) => {
-    let requested_profile = profile_storage[req.params.profile_name];
+apiRouter.get('/get_profile/:profile_name', async (req, res) => {
+    let requested_profile = await DB.get_profile(req.params.profile_name);
     res.send(requested_profile);
 });
 
+// never used?
 // Request: post specified profile
-apiRouter.post('/post_profile', (req, res) => {
+apiRouter.post('/post_profile', async (req, res) => {
     let new_profile = req.body;
-    profile_storage[new_profile.name] = new_profile;
+    await DB.insert_new_profile(new_profile);
     res.send("");
 });
 
+// allows new habits to be stored in the profile inside the database
 // Request: put specified profile
-apiRouter.put('/put_profile', (req, res) => {
+apiRouter.put('/put_profile', async (req, res) => {
     let updated_profile = req.body;
-    profile_storage[updated_profile.name] = updated_profile;
+    await DB.update_profile(updated_profile);
     res.send("");
 });
 
@@ -82,11 +82,8 @@ apiRouter.get('/get_habit_count', (_req, res) => {
 });
 
 // Request: put incremented habit count
-apiRouter.put('/put_habit_count', (req, res) => {
-    let recieved_habit_count = req.body;
-    // console.log(recieved_habit_count);
-    // console.log(habit_count);
-    habit_count = recieved_habit_count.habit_count;
+apiRouter.put('/put_habit_count', async (_req, res) => {
+    await DB.increment_habit_counter();
     res.send("");
 });
 
