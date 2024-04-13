@@ -2,16 +2,16 @@
 Application authentication and authorization
 
 ## 20% - Supports new user registration
-(INCOMPLETE)
+In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_correct'... This endpoint handles the case when new username is used.
 
 ## 20% - Supports existing user authentication
-(INCOMPLETE)
+In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_correct'... This endpoint handles the case when an existing username is used.
 
 ## 20% - Stores application data in MongoDB
-(INCOMPLETE)
+In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_correct'... This endpoint handles the case when new username is used.
 
 ## 20% - Stores and retrieves credentials in MongoDB
-(INCOMPLETE)
+In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_correct'... This endpoint retrieves the profile credentials from the database using "DB.get_profile(attempted_name);"  It also stores new credentials for a new profile using "DB.insert_new_profile(new_profile);". Note that in database.js, the insert_new_profile() method converts the password from plain text to hashed.
 
 ## 20% - Restricts application functionality based upon authentication
 (INCOMPLETE)
