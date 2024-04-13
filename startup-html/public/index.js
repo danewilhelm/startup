@@ -22,6 +22,7 @@ async function login() {
     // The user successfully logged in
     localStorage.setItem("current_profile_name", name);
     console.log("User successfully logged in");
+    authenticated = true;
     window.location.href = 'make.html';
 }
 

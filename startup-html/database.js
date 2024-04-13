@@ -36,14 +36,11 @@ function update_profile(profile) {
 // UNTESTED
 async function insert_new_profile(profile) {
   // Hash the password before we insert it into the database
-  profile.password = await bcrypt.hash(password, 10);
+  profile.password = await bcrypt.hash(password, 5);
   await profile_collection.insertOne(profile);
   // not sure why we return it here yet
   return profile; 
 }
-
-// UNTESTED
-
 
 
 

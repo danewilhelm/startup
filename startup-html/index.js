@@ -65,6 +65,7 @@ apiRouter.put('/put_habit_count', (req, res) => {
     res.send("");
 });
 
+
 // Request: Return the application's default page if the path is unknown
 app.use((_req, res) => {
     res.sendFile('index.html', { root: 'public' });
