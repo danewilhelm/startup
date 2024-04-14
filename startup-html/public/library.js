@@ -36,10 +36,10 @@ function insert_child(parent_selector, child_element_type ,text) {
 function update_name() {
     // get name element and current profile
     const name_el = document.querySelector('.profile_name');
-    let current_profile = retrieve_current_profile();
+    let current_profile_name = localStorage.getItem("current_profile_name");
 
     // set name element to current profile's name
-    name_el.textContent = current_profile.name ?? 'Mystery user';
+    name_el.textContent = current_profile_name ?? 'Mystery user';
 }
 
 function retrieve_current_profile() {
