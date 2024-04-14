@@ -18,7 +18,7 @@ The only way to navigate to the other pages from index.html is through the login
 
 ## Misc. Prerequisites
 ### Prerequisite: Simon JavaScript deployed to your production environment
-(INCOMPLETE)
+Check. See simon.habitmaker.click
 
 ### Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
 See bottom of every page.
