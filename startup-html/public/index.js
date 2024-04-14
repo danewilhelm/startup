@@ -166,12 +166,13 @@ async function test_main() {
     let result6 = get_habit_count_from_backend();
     result6.then((result) => console.log(result));
 }
-// test_main();
+
 function normal_main() {
     display_habit_counter();
-    setInterval(increment_and_display_habit_counter, 3000);
+    // setInterval(increment_and_display_habit_counter, 3000);
 }
 
+// test_main();
 normal_main();
 
 

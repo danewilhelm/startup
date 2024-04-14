@@ -51,11 +51,21 @@ async function increment_habit_counter() {
   }
 }
 
+async function get_habit_counter() {
+  let habit_count_object = await habit_count_collection.findOne();
+  if (habit_count_object == null) {
+    return 0;
+  } else {
+    return habit_count_object.habit_count;
+  }
+}
+
 module.exports = {
   get_profile,
   update_profile,
   insert_new_profile,
-  increment_habit_counter
+  increment_habit_counter,
+  get_habit_counter
 }
 
 

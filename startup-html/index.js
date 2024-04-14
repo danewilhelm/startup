@@ -8,7 +8,6 @@ const DB = require('./database.js');
 const bcrypt = require('bcrypt');
 
 
-
 // The service port. In production the front-end code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
@@ -60,7 +59,7 @@ apiRouter.get('/get_profile/:profile_name', async (req, res) => {
     res.send(requested_profile);
 });
 
-// never used?
+// only used in testing (new profiles are normally created in the login endpoint)
 // Request: post specified profile
 apiRouter.post('/post_profile', async (req, res) => {
     let new_profile = req.body;
@@ -77,7 +76,8 @@ apiRouter.put('/put_profile', async (req, res) => {
 });
 
 // Request: get habit count
-apiRouter.get('/get_habit_count', (_req, res) => {
+apiRouter.get('/get_habit_count', async (_req, res) => {
+    let habit_count = await DB.get_habit_counter();
     res.send(JSON.stringify(habit_count));
 });
 
