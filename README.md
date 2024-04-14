@@ -1,3 +1,39 @@
+# Login Deliverable
+Application authentication and authorization
+
+## 20% - Supports new user registration
+In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_correct'... This endpoint handles the case when new username is used.
+
+## 20% - Supports existing user authentication
+In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_correct'... This endpoint handles the case when an existing username is used.
+
+## 20% - Stores application data in MongoDB
+INCOMPLETE: when a habit is submitted, store it in the database. Also update the global counter properly in the database.
+
+## 20% - Stores and retrieves credentials in MongoDB
+In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_correct'... This endpoint retrieves the profile credentials from the database using "DB.get_profile(attempted_name);"  It also stores new credentials for a new profile using "DB.insert_new_profile(new_profile);". Note that in database.js, the insert_new_profile() method converts the password from plain text to hashed.
+
+## 20% - Restricts application functionality based upon authentication
+The only way to navigate to the other pages from index.html is through the login button. The login button will only change to make.html if there is a new name used or the correct login credentials were used.
+
+## Misc. Prerequisites
+### Prerequisite: Simon JavaScript deployed to your production environment
+Check. See simon.habitmaker.click
+
+### Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
+See bottom of every page.
+
+### Prerequisite:Git repository README.md file
+Ya lookin' at it mate.
+
+### Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
+\\(^v^)/
+
+
+#
+# ---------------------Past Deliverables--------------------
+
+
 # Service Deliverable
 Backend web service support and interaction
 ## 40% - Create an HTTP service using Node.js and Express
@@ -30,8 +66,8 @@ Ya lookin' at it mate.
 ### Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
 \(^v^)/
 
-#
-# ---------------------Past Deliverables--------------------
+
+
 
 # Javascript Deliverable
 ## 20% JavaScript support for future login.
