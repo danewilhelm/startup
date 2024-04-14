@@ -14,7 +14,7 @@ INCOMPLETE: when a habit is submitted, store it in the database. Also update the
 In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_correct'... This endpoint retrieves the profile credentials from the database using "DB.get_profile(attempted_name);"  It also stores new credentials for a new profile using "DB.insert_new_profile(new_profile);". Note that in database.js, the insert_new_profile() method converts the password from plain text to hashed.
 
 ## 20% - Restricts application functionality based upon authentication
-(INCOMPLETE)
+The only way to navigate to the other pages from index.html is through the login button. The login button will only change to make.html if there is a new name used or the correct login credentials were used.
 
 ## Misc. Prerequisites
 ### Prerequisite: Simon JavaScript deployed to your production environment
