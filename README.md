@@ -1,3 +1,37 @@
+# Websocket Deliverable
+WebSocket support for data pushed from the backend
+
+## 20% - Backend listens for WebSocket connection
+(INCOMPLETE)
+
+## 20% - Frontend makes WebSocket connection
+(INCOMPLETE)
+
+## 30% - Data sent over WebSocket connection
+(INCOMPLETE)
+
+## 30% - WebSocket data displayed in the application interface
+(INCOMPLETE)
+
+## Misc. Prerequisites
+### Prerequisite: Simon JavaScript deployed to your production environment
+(INCOMPLETE)
+
+### Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
+See bottom of every page.
+
+### Prerequisite:Git repository README.md file
+Ya lookin' at it mate.
+
+### Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
+\\(^v^)/
+
+
+
+# ---------------------Past Deliverables--------------------
+
+
+
 # Login Deliverable
 Application authentication and authorization
 
@@ -30,8 +64,7 @@ Ya lookin' at it mate.
 \\(^v^)/
 
 
-#
-# ---------------------Past Deliverables--------------------
+
 
 
 # Service Deliverable
