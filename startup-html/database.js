@@ -5,6 +5,9 @@ const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostna
 const client = new MongoClient(url);
 const db = client.db('startup');
 
+// access connections from websocket
+const {connections} = require("./peerProxy.js");
+
 // initialize bcrypt
 const bcrypt = require('bcrypt');
 
@@ -45,9 +48,17 @@ async function increment_habit_counter() {
   let habit_count_object = await habit_count_collection.findOne();
   if (habit_count_object == null) {
     await habit_count_collection.insertOne({habit_count: 1});
+    await broadcast_habit_counter(1);
   } else {
     habit_count_object.habit_count = habit_count_object.habit_count + 1;
     await habit_count_collection.replaceOne({}, habit_count_object);
+    await broadcast_habit_counter(habit_count_object.habit_count);
+  }
+}
+
+async function broadcast_habit_counter(habit_count) {
+  for (let connection of connections) {
+    connection.ws.send(habit_count);
   }
 }
 

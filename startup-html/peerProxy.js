@@ -1,6 +1,10 @@
 const { WebSocketServer } = require('ws');
 const uuid = require('uuid');
 
+
+// Keep track of all the connections so we can forward messages
+let connections = [];
+
 function peerProxy(httpServer) {
   // Create a websocket object
   const wss = new WebSocketServer({ noServer: true });
@@ -12,10 +16,10 @@ function peerProxy(httpServer) {
     });
   });
 
-  // Keep track of all the connections so we can forward messages
-  let connections = [];
+  
 
   wss.on('connection', (ws) => {
+    console.log("we've connected! :D");
     const connection = { id: uuid.v4(), alive: true, ws: ws };
     connections.push(connection);
 
@@ -57,4 +61,7 @@ function peerProxy(httpServer) {
   }, 10000);
 }
 
-module.exports = { peerProxy };
+module.exports = {
+  peerProxy,
+  connections
+ };

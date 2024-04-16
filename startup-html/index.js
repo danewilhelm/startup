@@ -8,7 +8,7 @@ const DB = require('./database.js');
 const bcrypt = require('bcrypt');
 
 // setting up websocket
-const { WebSocketServer } = require('ws');
+const { peerProxy } = require('./peerProxy.js');
 
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
@@ -98,6 +98,8 @@ app.use((_req, res) => {
 
 
   //--------------start listening for requests-------------
-app.listen(port, () => {    
-    console.log(`Listening on port ${port}`);
+const httpService = app.listen(port, () => {    
+  console.log(`Listening on port ${port}`);
 });
+
+peerProxy(httpService);

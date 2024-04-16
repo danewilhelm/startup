@@ -54,16 +54,39 @@ function correct_login(given_name, given_password, attempted_profile) {
     return false;
 }
 
+function configure_websocket() {
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    let socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    socket.onopen = (event) => {
+        console.log("websocket connected");
+        // update the integer
+    };
+    socket.onclose = (event) => {
+        console.log("websocket disconnected");
+    };
+    socket.onmessage = (event) => {
+        // extract the integer from the message and update the page to display the integer
+        update_habit_counter(event.data);
+    };
+
+    return socket;
+}
+
 async function display_habit_counter() {
     let habit_counter_el = document.querySelector('#habit_counter');
     let habit_int = await get_habit_count_from_backend();
     habit_counter_el.textContent = habit_int;
 }
 
-async function increment_and_display_habit_counter() {
-    increment_habit_counter();
-    display_habit_counter();
+function update_habit_counter(habit_count) {
+    let habit_counter_el = document.querySelector('#habit_counter');
+    habit_counter_el.textContent = habit_count;
 }
+
+// async function increment_and_display_habit_counter() {
+//     increment_habit_counter();
+//     display_habit_counter();
+// }
 
 // --------------------localStorage helper functions------------------------------------
 // object function
@@ -167,10 +190,14 @@ async function test_main() {
     result6.then((result) => console.log(result));
 }
 
+
+
 function normal_main() {
+    let socket = configure_websocket();
     display_habit_counter();
     // setInterval(increment_and_display_habit_counter, 3000);
 }
+
 
 // test_main();
 normal_main();
