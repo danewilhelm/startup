@@ -2,16 +2,16 @@
 WebSocket support for data pushed from the backend
 
 ## 20% - Backend listens for WebSocket connection
-(INCOMPLETE)
+In index.html (backend) at the very bottom, it passes the httpServer object into the peerProxy function. This creates the websocket listener on the backend. In the console it prints out "we've connected! :D".
 
 ## 20% - Frontend makes WebSocket connection
-(INCOMPLETE)
+In index.html (frontend) in configure_websocket(), it connects to the websocket and outputs in the console log "websocket connected".
 
 ## 30% - Data sent over WebSocket connection
-(INCOMPLETE)
+The data being sent over the webSocket connection is an integer representing how many total habits have been made. This happens when someone successfully submits a habit on the make.html page.
 
-## 30% - WebSocket data displayed in the application interface
-(INCOMPLETE)
+## 30% - WebSocket data diplayed in the application interface
+In index.html (frontend), it displays the integer sent through the websocket under the header "Global Habits Made".
 
 ## Misc. Prerequisites
 ### Prerequisite: Simon JavaScript deployed to your production environment
