@@ -1,6 +1,6 @@
 TA Grading Note: Scroll down to find the ungraded deliverable notes.
 
-#React Deliverable 
+# React Deliverable 
 Application converted to use React
 ## 10% Bundled using Vite
 (INCOMPLETE)
