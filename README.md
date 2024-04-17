@@ -50,7 +50,7 @@ The global habit counter is stored in MongoDB, and also all the user's data (whi
 In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_correct'... This endpoint retrieves the profile credentials from the database using "DB.get_profile(attempted_name);"  It also stores new credentials for a new profile using "DB.insert_new_profile(new_profile);". Note that in database.js, the insert_new_profile() method converts the password from plain text to hashed.
 
 ## 20% - Restricts application functionality based upon authentication
-When a profile is created, a token is generated (see index.js in the endpoint "is_login_correct"). That token is stored in a cookie on the user's frontend. That token is required to access the functionality of all the other endpoints (except for the get_habit_count endpoint, which is displayed publicly on the frontend index.js)
+When a profile is created, a token is generated (see index.js in the endpoint "is_login_correct"). That token is stored in a cookie on the user's frontend. That token is required to access the functionality of all the other endpoints (except for the get_habit_count endpoint, which is displayed publicly on the frontend index.js). When not authenticated, the user cannot submit habits (an error is thrown in the console). The user also cannot view any of their habits in the habit library (the habits about gym clothes, positive thoughts, and laundry are default placeholders in library.html).
 
 ## Misc. Prerequisites
 ### Prerequisite: Simon JavaScript deployed to your production environment
