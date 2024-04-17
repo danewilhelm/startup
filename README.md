@@ -54,7 +54,7 @@ When a profile is created, a token is generated (see index.js in the endpoint "i
 
 ## Misc. Prerequisites
 ### Prerequisite: Simon JavaScript deployed to your production environment
-Check. See simon.habitmaker.click
+Check. See simon.habitmaker.click (note: it is the websocket simon, not the login simon).
 
 ### Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
 See bottom of every page.
