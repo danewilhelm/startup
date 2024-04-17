@@ -1,5 +1,22 @@
 TA Grading Note: Scroll down to find the ungraded deliverable notes.
 
+#React Deliverable 
+Application converted to use React
+## 10% Bundled using Vite
+(INCOMPLETE)
+
+## 30% Multiple functional react components
+(INCOMPLETE)
+
+## 30% React router
+(INCOMPLETE)
+
+## 30% React hooks
+(INCOMPLETE)
+
+
+# ---------------------Past Deliverables--------------------
+
 # Websocket Deliverable
 WebSocket support for data pushed from the backend
 
@@ -29,8 +46,6 @@ Ya lookin' at it mate.
 \\(^v^)/
 
 
-
-# ---------------------Past Deliverables--------------------
 
 
 
