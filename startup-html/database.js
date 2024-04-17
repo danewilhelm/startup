@@ -32,6 +32,10 @@ async function get_profile(name) {
   return await profile_collection.findOne({name: name});
 }
 
+async function get_profile_by_token(token) {
+  return await profile_collection.findOne({token: token});
+}
+
 async function update_profile(profile) {
   await profile_collection.updateOne({name: profile.name}, {$set:{habit_list: profile.habit_list}});
 }
@@ -73,6 +77,7 @@ async function get_habit_counter() {
 
 module.exports = {
   get_profile,
+  get_profile_by_token,
   update_profile,
   insert_new_profile,
   increment_habit_counter,
