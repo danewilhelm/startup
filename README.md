@@ -1,4 +1,4 @@
-TA Grading Note: Scroll below the websocket deliverable notes to reach the login deliverable notes.
+TA Grading Note: Scroll down to find the ungraded deliverable notes.
 
 # Websocket Deliverable
 WebSocket support for data pushed from the backend
