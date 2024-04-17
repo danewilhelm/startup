@@ -12,7 +12,7 @@ Each jsx file in the src directory (login.jsx, play.jsx, scores.jsx, and about.j
 In app.jsx, It chooses to route between the react components based on the navigation links at the top.
 
 ## 30% React hooks
-
+The router is using hooks to switch the components. These hooks are what allow the main components to be displayed (Login, Play, Scores, and About)
 
 
 # ---------------------Past Deliverables--------------------
