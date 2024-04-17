@@ -1,24 +1,40 @@
-# Login Deliverable
-Application authentication and authorization
+TA Grading Note: Scroll down to find the ungraded deliverable notes.
 
-## 20% - Supports new user registration
-In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_correct'... This endpoint handles the case when new username is used.
+# React Deliverable 
+Application converted to use React
+## 10% Bundled using Vite
+(INCOMPLETE)
 
-## 20% - Supports existing user authentication
-In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_correct'... This endpoint handles the case when an existing username is used.
+## 30% Multiple functional react components
+(INCOMPLETE)
 
-## 20% - Stores application data in MongoDB
-INCOMPLETE: when a habit is submitted, store it in the database. Also update the global counter properly in the database.
+## 30% React router
+(INCOMPLETE)
 
-## 20% - Stores and retrieves credentials in MongoDB
-In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_correct'... This endpoint retrieves the profile credentials from the database using "DB.get_profile(attempted_name);"  It also stores new credentials for a new profile using "DB.insert_new_profile(new_profile);". Note that in database.js, the insert_new_profile() method converts the password from plain text to hashed.
+## 30% React hooks
+(INCOMPLETE)
 
-## 20% - Restricts application functionality based upon authentication
-The only way to navigate to the other pages from index.html is through the login button. The login button will only change to make.html if there is a new name used or the correct login credentials were used.
+
+# ---------------------Past Deliverables--------------------
+
+# Websocket Deliverable
+WebSocket support for data pushed from the backend
+
+## 20% - Backend listens for WebSocket connection
+In index.html (backend) at the very bottom, it passes the httpServer object into the peerProxy function. This creates the websocket listener on the backend. In the console it prints out "we've connected! :D".
+
+## 20% - Frontend makes WebSocket connection
+In index.html (frontend) in configure_websocket(), it connects to the websocket and outputs in the console log "websocket connected".
+
+## 30% - Data sent over WebSocket connection
+The data being sent over the webSocket connection is an integer representing how many total habits have been made. This happens when someone successfully submits a habit on the make.html page.
+
+## 30% - WebSocket data diplayed in the application interface
+In index.html (frontend), it displays the integer sent through the websocket under the header "Global Habits Made".
 
 ## Misc. Prerequisites
 ### Prerequisite: Simon JavaScript deployed to your production environment
-Check. See simon.habitmaker.click
+YESSIR.
 
 ### Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
 See bottom of every page.
@@ -30,8 +46,42 @@ Ya lookin' at it mate.
 \\(^v^)/
 
 
-#
-# ---------------------Past Deliverables--------------------
+
+
+
+# Login Deliverable
+Application authentication and authorization
+
+## 20% - Supports new user registration
+In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_correct'... This endpoint handles the case when new username is used.
+
+## 20% - Supports existing user authentication
+In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_correct'... This endpoint handles the case when an existing username is used.
+
+## 20% - Stores application data in MongoDB
+The global habit counter is stored in MongoDB, and also all the user's data (which includes their username, password, and submitted habits). See database.js
+
+## 20% - Stores and retrieves credentials in MongoDB
+In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_correct'... This endpoint retrieves the profile credentials from the database using "DB.get_profile(attempted_name);"  It also stores new credentials for a new profile using "DB.insert_new_profile(new_profile);". Note that in database.js, the insert_new_profile() method converts the password from plain text to hashed.
+
+## 20% - Restricts application functionality based upon authentication
+When a profile is created, a token is generated (see index.js in the endpoint "is_login_correct"). That token is stored in a cookie on the user's frontend. If a user does not authenticate, they will not be able to use the application's functionality. Note: I did not design a way to logout, sorry lol
+
+## Misc. Prerequisites
+### Prerequisite: Simon JavaScript deployed to your production environment
+Check. See simon.habitmaker.click (note: it is the websocket simon, not the login simon).
+
+### Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
+See bottom of every page.
+
+### Prerequisite:Git repository README.md file
+Ya lookin' at it mate.
+
+### Prerequisite: At least 10 git commits spread consistently throughout the assignment period.
+\\(^v^)/
+
+
+
 
 
 # Service Deliverable
