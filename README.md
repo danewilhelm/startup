@@ -42,13 +42,13 @@ In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_
 In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_correct'... This endpoint handles the case when an existing username is used.
 
 ## 20% - Stores application data in MongoDB
-INCOMPLETE: when a habit is submitted, store it in the database. Also update the global counter properly in the database.
+The global habit counter is stored in MongoDB, and also all the user's data (which includes their username, password, and submitted habits). See database.js
 
 ## 20% - Stores and retrieves credentials in MongoDB
 In index.js (the backend file) look for this endpoint: apiRouter.get('/is_login_correct'... This endpoint retrieves the profile credentials from the database using "DB.get_profile(attempted_name);"  It also stores new credentials for a new profile using "DB.insert_new_profile(new_profile);". Note that in database.js, the insert_new_profile() method converts the password from plain text to hashed.
 
 ## 20% - Restricts application functionality based upon authentication
-The only way to navigate to the other pages from index.html is through the login button. The login button will only change to make.html if there is a new name used or the correct login credentials were used.
+When a profile is created, a token is generated (see index.js in the endpoint "is_login_correct"). That token is stored in a cookie on the user's frontend. That token is required to access the functionality of all the other endpoints (except for the get_habit_count endpoint, which is displayed publicly on the frontend index.js)
 
 ## Misc. Prerequisites
 ### Prerequisite: Simon JavaScript deployed to your production environment
