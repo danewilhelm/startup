@@ -3,16 +3,16 @@ TA Grading Note: Scroll down to find the ungraded deliverable notes.
 # React Deliverable 
 Application converted to use React
 ## 10% Bundled using Vite
-(INCOMPLETE)
+Yep, bundled using vite. Don't know what else to say lol
 
 ## 30% Multiple functional react components
-(INCOMPLETE)
+Each jsx file in the src directory (login.jsx, play.jsx, scores.jsx, and about.jsx) contains the main component for that page. It's the only thing in those files.
 
 ## 30% React router
-(INCOMPLETE)
+In app.jsx, It chooses to route between the react components based on the navigation links at the top.
 
 ## 30% React hooks
-(INCOMPLETE)
+
 
 
 # ---------------------Past Deliverables--------------------
