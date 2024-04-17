@@ -17,7 +17,7 @@ In index.html (frontend), it displays the integer sent through the websocket und
 
 ## Misc. Prerequisites
 ### Prerequisite: Simon JavaScript deployed to your production environment
-(INCOMPLETE)
+YESSIR.
 
 ### Prerequisite: A link to your GitHub startup repository prominently displayed on your application's home page
 See bottom of every page.
